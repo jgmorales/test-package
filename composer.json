@@ -1,0 +1,54 @@
+{
+    "name": "jgmorales/test-package",
+    "description": "testing",
+    "keywords": [
+        "jgmorales",
+        "test-package"
+    ],
+    "homepage": "https://github.com/jgmorales/test-package",
+    "license": "MIT License (MIT)",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jose Morales",
+            "email": "jmorales@aivo.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+        "illuminate/support": "5.7.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.7.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jgmorales\\TestPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jgmorales\\TestPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jgmorales\\TestPackage\\TestPackageServiceProvider"
+            ],
+            "aliases": {
+                "TestPackage": "Jgmorales\\TestPackage\\TestPackageFacade"
+            }
+        }
+    }
+}
